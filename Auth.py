@@ -43,8 +43,8 @@ class Register :
             Register.login()
         else:
             print("Success!")
-
-        with open(database.json/{self.u.username}.json, 'w', encoding='utf-8') as database:
+#jsonmistake
+        with open(database.json/{self.u.username}.json, 'w', encoding='utf-8') as database:  
             json.dump(user_data, database, indent=4)
 
 class Auth:

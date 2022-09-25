@@ -1,10 +1,14 @@
+import json
+import hashlib
+
 class User:
     def __init__(self, username, name,surname,age, password):
         self.username = username
         self.name = name
+        self.surname = surname
         self.age = age
         self.password = password
-
+        self.is_active = False
     @property
     def get_username(self):
         return self.username
@@ -12,6 +16,9 @@ class User:
     @property
     def get_name(self):
         return self.name
+    @property
+    def get_surname(self):
+        return self.get_surname
 
     @property
     def get_password(self):
@@ -36,6 +43,9 @@ class Register :
             Register.login()
         else:
             print("Success!")
+
+        with open(database.json/{self.u.username}.json, 'w', encoding='utf-8') as database:
+            json.dump(user_data, database, indent=4)
 
 class Auth:
     def login(self):

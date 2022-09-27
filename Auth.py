@@ -70,6 +70,7 @@ class Auth:
     def change_password(self, password, new_password):
         with open(f'database/{username}.json', 'r', encoding='utf-8') as f:
             data = json.loads(f.read())
+            ##searching old password then change it
             if data.get('password') == self.hash_password(password):
                 data['password'] = self.hash_password(new_password)
                 with open(f'database/{username}.json', 'w', encoding='utf-8') as f:
